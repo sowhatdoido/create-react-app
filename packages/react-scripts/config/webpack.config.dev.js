@@ -261,6 +261,50 @@ module.exports = {
               },
             ],
           },
+          // Adds support for SASS
+          {
+            test: /\.scss$/,
+            exclude: /\.module\.scss$/,
+            use: [
+              require.resolve('style-loader'),
+              {
+                loader: require.resolve('css-loader'),
+                options: {
+                  importLoaders: 1,
+                },
+              },
+              {
+                loader: require.resolve('postcss-loader'),
+                options: postCSSLoaderOptions,
+              },
+              {
+                loader: require.resolve('sass-loader'),
+              },
+            ],
+          },
+          // Parses SASS before passing to CSS modules
+          // using the extension .module.scss
+          {
+            test: /\.module\.scss$/,
+            use: [
+              require.resolve('style-loader'),
+              {
+                loader: require.resolve('css-loader'),
+                options: {
+                  importLoaders: 1,
+                  modules: true,
+                  localIdentName: '[path]__[name]___[local]',
+                },
+              },
+              {
+                loader: require.resolve('postcss-loader'),
+                options: postCSSLoaderOptions,
+              },
+              {
+                loader: require.resolve('sass-loader'),
+              },
+            ],
+          },
           // "file" loader makes sure those assets get served by WebpackDevServer.
           // When you `import` an asset, you get its (virtual) filename.
           // In production, they would get copied to the `build` folder.
