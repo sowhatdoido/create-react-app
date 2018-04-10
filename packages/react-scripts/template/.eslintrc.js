@@ -10,11 +10,13 @@ module.exports = {
     browser: true,
   },
   extends: ['react-app', 'airbnb'],
-  // check if imports actually resolve
+  // Allows ESLint to resolve alias defined in react-scripts' webpack config
   settings: {
     'import/resolver': {
       webpack: {
-        config: 'config/webpack.config.dev.js',
+        config: require.resolve(
+          '@sowhatdoido/react-scripts/config/webpack.config.dev.js'
+        ),
       },
     },
   },
