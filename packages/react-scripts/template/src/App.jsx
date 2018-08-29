@@ -11,12 +11,11 @@ class App extends Component {
   }
 
   render() {
-    const { message } = this.state;
     return (
       <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
-          <p>{message}</p>
+          <p>{this.state.message}</p>
           <a
             className="App-link"
             href="https://reactjs.org"

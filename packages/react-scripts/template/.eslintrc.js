@@ -18,6 +18,10 @@ module.exports = {
     },
   },
   rules: {
+    // disable destructure requirement on context, props, and state
+    // TODO: we may want to enable this in the future to encourage stateless functions and keeping things DRY
+    //       that way the code isn't peppered with `this.state` and you'd be required to pass state into functions
+    'react/destructuring-assignment': 'off',
     // require file extensions for all files except the ones listed
     'import/extensions': [
       'error',
