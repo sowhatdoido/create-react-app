@@ -195,6 +195,8 @@ module.exports = {
       // Support React Native Web
       // https://www.smashingmagazine.com/2016/08/a-glimpse-into-the-future-with-react-native-for-web/
       'react-native': 'react-native-web',
+      // Adds an alias to source folder
+      '@': paths.appSrc,
     },
     plugins: [
       // Prevents users from importing files from outside of src/ (or node_modules/).
@@ -227,8 +229,8 @@ module.exports = {
                 extends: [require.resolve('eslint-config-react-app')],
               },
               // @remove-on-eject-begin
-              ignore: false,
-              useEslintrc: false,
+              ignore: true,
+              useEslintrc: true,
               // @remove-on-eject-end
             },
             loader: require.resolve('eslint-loader'),
@@ -378,7 +380,7 @@ module.exports = {
             // it's runtime that would otherwise be processed through "file" loader.
             // Also exclude `html` and `json` extensions so they get processed
             // by webpacks internal loaders.
-            exclude: [/\.(js|jsx|mjs)$/, /\.html$/, /\.json$/],
+            exclude: [/\.(js|jsx|mjs|ejs)$/, /\.html$/, /\.json$/],
             options: {
               name: 'static/media/[name].[hash:8].[ext]',
             },
