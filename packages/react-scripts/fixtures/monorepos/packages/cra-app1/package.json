@@ -1,5 +1,5 @@
 {
-  "name": "cra-app1",
+  "name": "@sowhatdoido/cra-app1",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -8,7 +8,7 @@
     "react-dom": "^16.2.0"
   },
   "devDependencies": {
-    "react-scripts": "latest"
+    "@sowhatdoido/react-scripts": "latest"
   },
   "scripts": {
     "start": "react-scripts start",

@@ -1,5 +1,5 @@
 {
-  "name": "comp2",
+  "name": "@sowhatdoido/comp2",
   "dependencies": {
     "comp1": "^1.0.0"
   },
