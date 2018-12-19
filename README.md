@@ -1,3 +1,7 @@
+# no longer maintained
+
+This repo is no longer being maintained because create-react-app handles most of our needs out of the box, thus most custom configurations are no longer necessary.
+
 # Create React App [![Build Status](https://travis-ci.org/facebook/create-react-app.svg?branch=master)](https://travis-ci.org/facebook/create-react-app)
 
 Create React apps with no build configuration.
